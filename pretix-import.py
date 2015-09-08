@@ -20,10 +20,11 @@ with open(sys.argv[1]) as f:
 ticket_map = {}
 variation_map = {}
 
+
 def create_ticket(name, price):
     t = Ticket.objects.create(
         name=name, receipt_name=name, invoice_name=name,
-        description=None, sale_price=price, invoice_price=price,
+        description=None, sale_price=0, invoice_price=0,
         tax_rate=TAX_RATE, rabate_rate=0, receipt_autoprint=False,
         invoice_autoprint=False, active=True, deleted=False,
         preorder_sold=True
